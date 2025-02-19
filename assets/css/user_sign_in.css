@@ -1,0 +1,77 @@
+/* user_sign_in.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password-link, .signup-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password-link a, .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password-link a:hover, .signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+      /* Message Alerter */
+      .alert {
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .alert.success { background-color: #4CAF50; color: white; }
+    .alert.error { background-color: #f44336; color: white; }
+
+    /* Fade-out Effect */
+    .alert.fade-out {
+        opacity: 0;
+    }

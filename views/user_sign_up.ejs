@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codial | <%= title %></title>
+    <link rel="stylesheet" href="/css/user_sign_up.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create an Account</h2>
+
+
+
+           <!-- Flash Messages -->
+           <% if (error_msg) { %>
+            <div class="alert error"><%= error_msg %></div>
+        <% } %>
+
+        <% if (success_msg) { %>
+            <div class="alert success"><%= success_msg %></div>
+        <% } %>
+
+
+
+        <form action="/users/handleSignUp" method="POST">
+            <!-- Name Field -->
+            <input type="text" name="name" placeholder="Full Name" value="<%= name || '' %>" required>
+        
+            <!-- Email Field -->
+            <input type="email" name="email" placeholder="Email Address" value="<%= email || '' %>" required>
+        
+            <!-- Password Field -->
+            <input type="password" name="password" placeholder="Password" required>
+        
+            <!-- Confirm Password Field -->
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+        
+            <!-- Submit Button -->
+            <button type="submit">Sign Up</button>
+        </form>
+        
+        <div class="login-link">
+            <p>Already have an account? <a href="/users/sign-in">Log in here</a></p>
+        </div>
+
+        <a href="/auth/google">
+            <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" 
+                 alt="Sign in with Google">
+        </a>
+        
+        
+        
+        
+    </div>
+
+
+
+    <script>
+        // Automatically remove alerts after 3 seconds
+        setTimeout(() => {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                alert.classList.add('fade-out');
+                setTimeout(() => alert.remove(), 500); // Remove from DOM after fading out
+            });
+        }, 3000);
+    </script>
+
+</body>
+</html>
